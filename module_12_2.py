@@ -19,12 +19,8 @@ class TournamentTest(unittest.TestCase):
         place = 0
         expected_result = {}
         expected_finishers = 3
-        all_speed = [runner.speed for runner in result.values()]
         for runner in result.values():
             result_name.append(runner)
-            for max_speed in all_speed:
-                if runner.speed >= max_speed:
-                    result_name += runner.name
             place += 1
             expected_result[place] = runner.name
         self.assertEqual(expected_result, result, False)
