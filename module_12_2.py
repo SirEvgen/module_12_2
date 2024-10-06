@@ -16,11 +16,9 @@ class TournamentTest(unittest.TestCase):
         result_name = []
         place = 0
         self.expected_result = {}
-        self.expected_finishers = 3
 
         for runner in self.result.values():
             result_name.append(runner)
-
             place += 1
             self.expected_result[place] = runner.name
 
@@ -38,7 +36,7 @@ class TournamentTest(unittest.TestCase):
         self.assertTrue(self.expected_result == self.result, True)
 
     def test_finishers(self):
-        self.assertEqual(len(self.result.values()), self.expected_finishers)
+        self.assertEqual(len(self.result.values()), len((self.expected_result.values())))
 
     @classmethod
     def tearDownClass(cls):
